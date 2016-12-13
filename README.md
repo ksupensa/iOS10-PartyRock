@@ -1,1 +1,2 @@
-# iOS10-PartyRock\nThis is the storyboard version
+# iOS10-PartyRock
+This is the storyboard version
