@@ -8,11 +8,16 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="still time.ttf">
+            <string>StillTime-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--MainVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RockPartyApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="mainVC" customModule="RockPartyApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -55,13 +60,13 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sPd-3Y-Jdh">
                                                 <rect key="frame" x="106.5" y="0.0" width="107" height="30"/>
                                                 <state key="normal" title="Top Songs">
-                                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t5K-S4-p8D">
                                                 <rect key="frame" x="213.5" y="0.0" width="106.5" height="30"/>
                                                 <state key="normal" title="Events">
-                                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                             </button>
                                         </subviews>
@@ -82,7 +87,7 @@
                                         </variation>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="T0L-Yw-RCI" firstAttribute="top" secondItem="wZN-4J-kcs" secondAttribute="top" id="N3G-Ls-BRf"/>
                                     <constraint firstAttribute="height" constant="50" id="VWK-tq-Rx0"/>
@@ -106,27 +111,39 @@
                                 <rect key="frame" x="0.0" y="130" width="320" height="350"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="z9S-R9-oh0">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PartyCell" id="z9S-R9-oh0" customClass="PartyCell" customModule="RockPartyApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z9S-R9-oh0" id="ldK-o4-Mi7">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="partybanner" translatesAutoresizingMaskIntoConstraints="NO" id="HHz-uK-HuQ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="80" height="49.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="80" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="80" id="6OQ-b0-d2M"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Where the sun goes down" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSa-EB-Hdx">
+                                                    <rect key="frame" x="88" y="10" width="224" height="30"/>
+                                                    <fontDescription key="fontDescription" name="StillTime-Regular" family="Still Time" pointSize="25"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="rSa-EB-Hdx" firstAttribute="leading" secondItem="HHz-uK-HuQ" secondAttribute="trailing" constant="8" id="Qko-Je-GZv"/>
+                                                <constraint firstAttribute="trailing" secondItem="rSa-EB-Hdx" secondAttribute="trailing" constant="8" id="Qwc-lj-D3I"/>
+                                                <constraint firstItem="rSa-EB-Hdx" firstAttribute="centerY" secondItem="ldK-o4-Mi7" secondAttribute="centerY" id="Xo4-OX-Jd4"/>
                                                 <constraint firstItem="HHz-uK-HuQ" firstAttribute="top" secondItem="ldK-o4-Mi7" secondAttribute="top" id="YsP-DS-R3G"/>
                                                 <constraint firstItem="HHz-uK-HuQ" firstAttribute="leading" secondItem="ldK-o4-Mi7" secondAttribute="leading" id="eaT-Ow-hXg"/>
                                                 <constraint firstAttribute="bottom" secondItem="HHz-uK-HuQ" secondAttribute="bottom" id="y8Z-p4-PcI"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.40000000000000002" green="1" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="videoPreviewImage" destination="HHz-uK-HuQ" id="zBq-3o-FJk"/>
+                                            <outlet property="videoTitle" destination="rSa-EB-Hdx" id="998-AM-GLj"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -145,10 +162,47 @@
                             <constraint firstItem="wZN-4J-kcs" firstAttribute="top" secondItem="INn-o7-Tgh" secondAttribute="bottom" id="zvZ-db-bAW"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="Zgv-gn-nLF" id="57v-gR-TEq"/>
+                        <segue destination="G1l-iH-dUs" kind="showDetail" identifier="VideoVC" id="YcB-x8-hv3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="31.875" y="32.5"/>
+            <point key="canvasLocation" x="77" y="8"/>
+        </scene>
+        <!--VideoVC-->
+        <scene sceneID="rXp-ia-uOY">
+            <objects>
+                <viewController id="G1l-iH-dUs" customClass="VideoVC" customModule="RockPartyApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="E43-fu-VL0"/>
+                        <viewControllerLayoutGuide type="bottom" id="ITF-Ot-fgC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VEN-eu-hGQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rac-5a-APB">
+                                <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Rac-5a-APB" secondAttribute="trailing" id="2oB-0Q-6KC"/>
+                            <constraint firstItem="Rac-5a-APB" firstAttribute="leading" secondItem="VEN-eu-hGQ" secondAttribute="leading" id="D1Z-Nt-Rue"/>
+                            <constraint firstItem="Rac-5a-APB" firstAttribute="top" secondItem="E43-fu-VL0" secondAttribute="bottom" id="JP1-6g-gEW"/>
+                            <constraint firstItem="ITF-Ot-fgC" firstAttribute="top" secondItem="Rac-5a-APB" secondAttribute="bottom" id="eD8-IG-Haw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="Rac-5a-APB" id="8Xv-3W-LWX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ytb-Oq-Na0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="868" y="8"/>
         </scene>
     </scenes>
     <resources>
