@@ -1,9 +1,0 @@
-version: "Apple Swift version 3.0.1 (swiftlang-800.0.58.6 clang-800.0.42.1)"
-options: "f58f50d5d75d2dd1891a5e58e4262c65"
-build_time: [535038897, 438575000]
-inputs:
-  "/Users/stitch/Documents/Informatique/iOS/iOS10/4-Foundational iOS/PartyRockApp/RockPartyApp/VideoVC.swift": [535038407, 0]
-  "/Users/stitch/Documents/Informatique/iOS/iOS10/4-Foundational iOS/PartyRockApp/RockPartyApp/mainVC.swift": [535038679, 0]
-  "/Users/stitch/Documents/Informatique/iOS/iOS10/4-Foundational iOS/PartyRockApp/RockPartyApp/PartyRock.swift": [534988822, 0]
-  "/Users/stitch/Documents/Informatique/iOS/iOS10/4-Foundational iOS/PartyRockApp/RockPartyApp/PartyCell.swift": [535017855, 0]
-  "/Users/stitch/Documents/Informatique/iOS/iOS10/4-Foundational iOS/PartyRockApp/RockPartyApp/AppDelegate.swift": [534944175, 0]
